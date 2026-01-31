@@ -6,10 +6,11 @@
       "chipFamily": "ESP32",
       "parts": [
         {
-          "path": "firmware.bin",
+          "path": "smartblind-full.bin",
           "offset": 0
         }
       ]
     }
   ]
+
 }
