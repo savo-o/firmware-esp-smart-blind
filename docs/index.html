@@ -3,48 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <title>ESP SmartBlind</title>
+
   <style>
     body {
-      font-family: Arial;
-      background: #0f172a;
+      background: #0f1220;
       color: white;
+      font-family: Arial;
       text-align: center;
-      padding: 40px;
+      padding-top: 60px;
     }
+
     .box {
-      max-width: 500px;
-      margin: auto;
-      background: #111827;
-      padding: 30px;
+      background: #1b1f3a;
+      padding: 40px;
+      display: inline-block;
       border-radius: 12px;
     }
-    a {
+
+    a, button {
       display: block;
-      margin: 15px 0;
-      padding: 12px;
-      background: #2563eb;
+      width: 280px;
+      margin: 10px auto;
+      padding: 15px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background: #4b7bec;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
     }
-    a:hover {
-      background: #1d4ed8;
+
+    button:hover, a:hover {
+      background: #3867d6;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="box">
-    <h1>ESP SmartBlind</h1>
-    <p>Прошивки проекта</p>
+<div class="box">
+  <h1>ESP SmartBlind</h1>
+  <p>Официальные прошивки</p>
 
-    <a href="firmware.bin">📥 Скачать прошивку</a>
+  <!-- 1 -->
+  <a href="firmware/smartblind-full.bin" download>
+    ⬇ Полная прошивка
+  </a>
 
-    <p style="opacity:0.6; margin-top:30px;">
-      Автор: Саво<br>
-      ESP32 Smart Curtain
-    </p>
-  </div>
+  <!-- 2 -->
+  <a href="firmware/smartblind-ota.bin" download>
+    ⬇ OTA обновление
+  </a>
+
+  <!-- 3 -->
+  <esp-web-install-button
+    manifest="manifest.json">
+  </esp-web-install-button>
+
+  <p style="font-size:12px;opacity:0.6;margin-top:20px">
+    Онлайн прошивка работает только в Chrome / Edge
+  </p>
+</div>
+
+<script
+  type="module"
+  src="https://unpkg.com/esp-web-tools@9/dist/web/install-button.js">
+</script>
 
 </body>
 </html>
